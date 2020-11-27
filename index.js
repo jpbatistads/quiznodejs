@@ -12,6 +12,18 @@ app.get("/",(req,res)=>{
     res.render("index")//Não precisa do caminho porque o ejs vai direto na pasta view.
 });
 
+app.get("/perguntar",(req,res)=>{
+    res.render("perguntar")//Não precisa do caminho porque o ejs vai direto na pasta view.
+});
+
+
+
+
+
+
+
+
+
 app.listen(8080,()=>{
     console.log("Servidor OK")//Configuração para o console.
 })
