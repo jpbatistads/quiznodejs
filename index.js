@@ -1,13 +1,14 @@
-const express = require('express');
+const express = require("express");
 const app = express();
+let ejs = require('ejs');
 
 //Uso do express como view engine
-app.set('view engine ','ejs');
+app.set('view engine', 'ejs');
 
 
 
 app.get("/",(req,res)=>{
-    res.send("Bem vindo ao meu site")
+    res.render("index")//Não precisa do caminho porque o ejs vai direto na pasta view.
 });
 
 app.listen(8080,()=>{
