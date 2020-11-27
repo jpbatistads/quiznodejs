@@ -1,0 +1,3 @@
+# EJS
+    --> Ejs permite utilizar HTML com Javascript.
+    É basicamente uma linguagem de template.
