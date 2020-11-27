@@ -4,6 +4,7 @@ let ejs = require('ejs');
 
 //Uso do express como view engine
 app.set('view engine', 'ejs');
+app.use(express.static('public'));//Utilização de arquivos estáticos.
 
 
 

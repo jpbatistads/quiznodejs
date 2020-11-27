@@ -1,3 +1,11 @@
 # EJS
     --> Ejs permite utilizar HTML com Javascript.
-    É basicamente uma linguagem de template.
+    É basicamente uma linguagem de template.<--
+
+    --> É importante saber que para usar o EJS
+    todos os arquivos devem estar dentro da
+    pasta views senão o express não consegue
+    reconhecer <--
+
+    --> Com o EJS podemos utilizar variáveis no
+    html
