@@ -16,7 +16,9 @@ app.get("/perguntar",(req,res)=>{
     res.render("perguntar")//Não precisa do caminho porque o ejs vai direto na pasta view.
 });
 
-
+app.post("/salvarPerguntas",(req,res)=>{
+    res.send("Formulário Receido")//Apontar rota no frontend no action do formulário.
+});
 
 
 
