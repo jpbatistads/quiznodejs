@@ -2,9 +2,11 @@ const express = require("express");
 const app = express();
 let ejs = require('ejs');
 const bodyParser = require('body-parser')
+const perguntaModel = require("./database/Pergunta")
 //Database
 const connection = require('./database/database')
-//Connection
+
+/**********Connection**********/
 .authenticate()
 .then(()=>{
     console.log("Conexão ok")
@@ -12,6 +14,8 @@ const connection = require('./database/database')
 .catch((msgErro)=>{
     console.log("msgErro")
 })
+/**********Connection**********/
+
 //Uso do express como view engine
 app.set('view engine', 'ejs');
 app.use(express.static('public'));//Utilização de arquivos estáticos.
