@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 let ejs = require('ejs');
 const bodyParser = require('body-parser')
-const perguntaModel = require("./database/Pergunta")
+const Pergunta = require("./database/Pergunta")//Importação do model da tabela.
 //Database
 const connection = require('./database/database')
 
@@ -32,10 +32,17 @@ app.get("/perguntar",(req,res)=>{
     res.render("perguntar")//Não precisa do caminho porque o ejs vai direto na pasta view.
 });
 
-app.post("/salvarPerguntas",(req,res)=>{
-    let titulo = req.body.titulo;
-    let descricao = req.body.descricao;
-    res.send("Formulário Receido")//Apontar rota no frontend no action do formulário.
+app.post("/salvarpergunta",(req,res)=>{
+    
+    var titulo = req.body.titulo;
+    var descricao = req.body.descricao;
+
+    Pergunta.create({
+        titulo: titulo,
+        descricao: descricao
+    }).then(()=>{
+        res.redirect("/");//apos salvar redireciona para a pg principal
+    });
 });
 
 
