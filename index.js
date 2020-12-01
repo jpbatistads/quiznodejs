@@ -25,7 +25,10 @@ app.use(bodyParser.urlencoded({extended:false}))//Decodifica os dados enviados p
 /**********ROTAS**********/
 
 app.get("/",(req,res)=>{
-    res.render("index")//Não precisa do caminho porque o ejs vai direto na pasta view.
+    Pergunta.findAll().then(pergunta =>{
+    console.log(pergunta);
+   })
+   res.render("index");
 });
 
 app.get("/perguntar",(req,res)=>{
