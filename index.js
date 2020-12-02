@@ -24,11 +24,13 @@ app.use(bodyParser.urlencoded({extended:false}))//Decodifica os dados enviados p
 
 /**********ROTAS**********/
 
-app.get("/",(req,res)=>{
-    Pergunta.findAll().then(pergunta =>{
-    console.log(pergunta);
-   })
-   res.render("index");
+app.get("/",(req,res)=> {
+    Pergunta.findAll({raw:true}).then(pergunta =>{
+        res.render("index",{
+            pergunta:pergunta
+        });
+   });
+   
 });
 
 app.get("/perguntar",(req,res)=>{

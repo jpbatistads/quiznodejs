@@ -1,6 +1,13 @@
 <%- include('./partials/header.ejs') %>
-   <body>
-      <%- include('./partials/navbar.ejs') %>
-      <h1>Estilo mais bonito</h1>
-   </body>
-   <%- include('./partials/footer.ejs') %>
+
+<body>
+   <%- include('./partials/navbar.ejs') %>
+
+   <div class="container">
+      <% pergunta.forEach(pergunta =>{ %>
+      <p><%= pergunta.titulo  %> </p>
+      <% })%>
+   </div>
+
+</body>
+<%- include('./partials/footer.ejs') %>
