@@ -25,7 +25,9 @@ app.use(bodyParser.urlencoded({extended:false}))//Decodifica os dados enviados p
 /**********ROTAS**********/
 
 app.get("/",(req,res)=> {
-    Pergunta.findAll({raw:true}).then(pergunta =>{
+    Pergunta.findAll({raw:true, order:[
+        ['id','DESC']
+    ]}).then(pergunta =>{
         res.render("index",{
             pergunta:pergunta
         });
