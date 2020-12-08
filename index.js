@@ -5,9 +5,10 @@ const bodyParser = require('body-parser')
 const Pergunta = require("./database/Pergunta")//Importação do model da tabela.
 //Database
 const connection = require('./database/database')
+const Resposta = require("./database/Resposta")
 
 /**********Connection**********/
-.authenticate()
+connection.authenticate()
 .then(()=>{
     console.log("Conexão ok")
 })
